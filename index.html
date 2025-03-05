@@ -1,28 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nb-NO">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chat">
-    <title>....</title>
+    <meta name="description" content="Sportsmaster Chatbot Demo">
+    <title>Sportsmaster x Dalai Demo</title>
+    <link rel="icon" type="image/png" href="https://yt3.googleusercontent.com/ytc/AIdro_ngjMbBSBYpB4-XO_qTjapNe2Lb9CXNUby0P7p2d71kmg=s900-c-k-c0x00ffffff-no-rj">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #008DCA;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        a {
+            color: #008DCA;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>...</h1>
-    <p>!</p>
+    <div class="container">
+        <h1>Sportsmaster Chatbot Demo</h1>
+        <p>Lim inn en vilkårlig produktlink fra et produkt i sortimentet og test ut. Dette er en demo, og serverinnstillingene er ennå ikke optimalisert for raskest mulig innlasting, så det vil bli raskere i produksjonsklar versjon.</p>
+        <p>Besøk <a href="https://www.sportsmaster.no" target="_blank">nettsiden</a> for å finne produkter du kan teste med.</p>
+    </div>
 
     <!-- Chatbot Script -->
     <script type="text/javascript">
         (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
             v.onload = function() {
-              window.voiceflow.chat.load({
-                verify: { projectID: '67bee8ec99721b58fcb5ea3e' },
-                url: 'https://general-runtime.voiceflow.com',
-                versionID: 'production'
-              });
-            }
-            v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+                window.voiceflow.chat.load({
+                    verify: { projectID: '67bee8ec99721b58fcb5ea3e' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production'
+                }).then(function() {
+                    window.voiceflow.chat.open();
+                });
+            };
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+            v.type = "text/javascript";
+            s.parentNode.insertBefore(v, s);
         })(document, 'script');
-      </script>
-      </body>
+    </script>
+</body>
 </html>
